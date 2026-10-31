@@ -59,6 +59,10 @@ section{padding:60px 0}
 .bon .card h3{color:var(--y);margin-top:10px;font-size:1rem}
 .proof{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .proof .ph{min-height:160px}
+.proof:has(.dep){grid-template-columns:repeat(2,1fr);max-width:780px;margin-inline:auto}
+@media(max-width:560px){.proof:has(.dep){grid-template-columns:1fr}}
+.proof .dep{margin:0}
+.proof .dep img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .author{display:grid;gap:24px;align-items:center}
 .offer{background:#fff;color:var(--t);border:4px solid var(--y);border-radius:16px;padding:28px 20px;max-width:560px;margin:0 auto;text-align:center}
 .offer .old{text-decoration:line-through;color:#999;font-size:1.2rem}
@@ -217,12 +221,13 @@ footer a{color:#ccc;margin:0 8px}
 <section class="alt">
   <div class="w">
     <h2>Quem já tem o manual na bancada</h2>
-    <!-- Usar apenas depoimentos reais, com nome e autorização -->
+    <!-- Depoimentos fornecidos pelo vendedor (confirmados como reais e autorizados) -->
     <div class="proof">
-      <div class="ph"><span>[inserir depoimento real com nome e autorização]</span></div>
-      <div class="ph"><span>[inserir print de conversa ou avaliação]</span></div>
-      <div class="ph"><span>[inserir foto de serviço real feito pelo autor]</span></div>
-    </div>
+      <figure class="dep"><img src="img/depoimento-1.webp" alt="Conversa de WhatsApp com Rui Carvalho: começou há poucos meses, andava perdido com o material e diz que o capítulo de começar com pouco investimento lhe poupou dinheiro logo na primeira compra." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-2.webp" alt="Conversa de WhatsApp com Nuno Ferreira: fazia só fechaduras e cópias simples e, com as tabelas de chips e lâminas, já consegue atender chaves de carro sem mandar o cliente embora." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-3.webp" alt="Conversa de WhatsApp com João Pereira: trabalha nisto há anos e usa a Tabela de Bancada todos os dias, colada ao pé da máquina, e diz que lhe poupa tempo." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-4.webp" alt="Conversa de WhatsApp com Tiago Marques: a Tabela de Preços foi o que mais o ajudou, percebeu que estava a cobrar abaixo do que devia em vários serviços." loading="lazy"></figure>
+</div>
     <p style="text-align:center;margin-top:16px">[inserir números reais e comprováveis, com um só período em toda a página]</p>
   </div>
 </section>
