@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bancada Pronta: o manual do serralheiro</title>
+<meta name="description" content="O manual de bancada do serralheiro, do residencial à codificação: 15 capítulos práticos para consultar na hora do serviço.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFC400;--y2:#ffd84d;--k:#0d0d0d;--k2:#1a1a1a;--g:#f4f4f2;--t:#222}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:var(--t);background:#fff;line-height:1.6;font-size:17px;padding-bottom:80px}
+h1,h2,h3{font-family:Montserrat,Arial,sans-serif;line-height:1.15;font-weight:900}
+h1{font-size:clamp(1.9rem,6vw,3.2rem)}
+h2{font-size:clamp(1.5rem,4.5vw,2.3rem);margin-bottom:.6em}
+h3{font-size:1.15rem;font-weight:700}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+.dark{background:var(--k);color:#eee}.dark h2{color:#fff}
+.alt{background:var(--g)}
+.hl{color:var(--y)}
+.mark{background:var(--y);color:var(--k);padding:0 .2em}
+.tag{display:inline-block;background:var(--y);color:var(--k);font-weight:700;font-size:.8rem;letter-spacing:.05em;padding:4px 10px;border-radius:3px;text-transform:uppercase;margin-bottom:14px}
+.btn{display:block;width:100%;max-width:460px;margin:26px auto 8px;background:var(--y);color:var(--k);text-align:center;text-decoration:none;font-family:Montserrat,sans-serif;font-weight:900;font-size:1.1rem;padding:18px 20px;border-radius:8px;box-shadow:0 6px 0 #b38900;transition:transform .1s}
+.btn:hover{background:var(--y2)}.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #b38900}
+.micro{text-align:center;font-size:.85rem;opacity:.8}
+.ph{position:relative;background:#cfcfcf;border:2px dashed #888;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#444;font-size:.85rem;text-align:center;font-family:monospace}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.ph.loaded{border:0;background:none}
+.ph span{padding:10px}
+.r169{aspect-ratio:16/9}.r11{aspect-ratio:1/1}.r43{aspect-ratio:4/3}.r34{aspect-ratio:3/4}
+/* hero */
+.hero{background:linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),var(--k);color:#fff;padding:40px 0 60px;position:relative;overflow:hidden}
+.hero .bg{position:absolute;inset:0;opacity:.25;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover}
+.hero .w{position:relative;z-index:1}
+.hero-grid{display:grid;gap:30px;align-items:center}
+.hero p.sub{font-size:1.1rem;margin:18px 0;color:#ddd}
+.brand{font-family:Montserrat;font-weight:900;color:var(--y);letter-spacing:.04em;margin-bottom:24px;font-size:.95rem}
+.list{list-style:none}.list li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid rgba(0,0,0,.08)}
+.dark .list li{border-color:rgba(255,255,255,.1)}
+.list li:before{content:"✔";position:absolute;left:0;top:9px;color:var(--k);background:var(--y);width:24px;height:24px;border-radius:50%;text-align:center;font-size:.8rem;line-height:24px}
+.list.x li:before{content:"✖";background:#e23b3b;color:#fff}
+.note{margin-top:20px;padding:16px;border-left:4px solid var(--y);background:#fff8dc;font-size:.95rem}
+.steps{display:grid;gap:20px;margin-top:24px}
+.step{background:var(--k2);border:1px solid #333;border-radius:12px;padding:24px;text-align:center}
+.step .ph{width:90px;height:90px;margin:0 auto 14px;font-size:.6rem}
+.step b{color:var(--y);font-family:Montserrat;font-size:1.4rem;display:block}
+.caps{display:grid;gap:12px;counter-reset:c}
+.cap{background:#fff;border-radius:10px;padding:16px 16px 16px 64px;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.cap:before{counter-increment:c;content:counter(c,decimal-leading-zero);position:absolute;left:14px;top:14px;font-family:Montserrat;font-weight:900;font-size:1.3rem;color:var(--k);background:var(--y);border-radius:6px;width:40px;text-align:center}
+.bon{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.bon .card{background:var(--k2);border-radius:12px;padding:14px;border:1px solid #333}
+.bon .card p{font-size:.92rem;margin-top:10px;color:#ddd}
+.bon .card h3{color:var(--y);margin-top:10px;font-size:1rem}
+.proof{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.proof .ph{min-height:160px}
+.author{display:grid;gap:24px;align-items:center}
+.offer{background:#fff;color:var(--t);border:4px solid var(--y);border-radius:16px;padding:28px 20px;max-width:560px;margin:0 auto;text-align:center}
+.offer .old{text-decoration:line-through;color:#999;font-size:1.2rem}
+.offer .new{font-family:Montserrat;font-weight:900;font-size:3.6rem;color:var(--k);line-height:1}
+.offer ul{text-align:left;margin:18px 0}
+.pay{font-size:.85rem;color:#666;margin-top:8px}
+.guar{display:grid;gap:24px;align-items:center}
+.guar .ph{width:180px;height:180px;margin:0 auto;border-radius:50%}
+details{background:#fff;border-radius:10px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+summary{cursor:pointer;font-weight:600;padding:18px 48px 18px 18px;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:18px;top:12px;font-size:1.6rem;color:var(--k);font-weight:700}
+details[open] summary:after{content:"–"}
+details p{padding:0 18px 18px}
+footer{background:#000;color:#999;font-size:.85rem;padding:36px 0 40px;text-align:center}
+footer a{color:#ccc;margin:0 8px}
+.lr{display:inline-block;margin-top:14px;border:1px solid #555;padding:8px 14px;border-radius:6px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:99;background:rgba(13,13,13,.96);padding:10px 14px;box-shadow:0 -4px 14px rgba(0,0,0,.3);transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky a{margin:0 auto;padding:14px;font-size:1rem;box-shadow:none}
+@media(min-width:860px){
+ .hero-grid,.author,.guar{grid-template-columns:1.2fr 1fr}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .caps{grid-template-columns:1fr 1fr}
+ .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+ .guar{grid-template-columns:200px 1fr}
+ .btn.left{margin-left:0}.btn.left+.micro{text-align:left;max-width:460px}
+ body{padding-bottom:0}
+ .sticky{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="bg"><img src="img/hero.jpg" alt="" onerror="this.remove()"></div>
+  <div class="w">
+    <div class="brand">🔑 BANCADA PRONTA</div>
+    <div class="hero-grid">
+      <div>
+        <span class="tag">Manual do serralheiro · do residencial à codificação</span>
+        <h1>Encravou a meio do serviço? <span class="hl">Abre o manual, encontra a resposta</span> e entrega a chave ao cliente.</h1>
+        <p class="sub">O manual de bancada do serralheiro (ou chaveiro, como lhe quiseres chamar): 15 capítulos práticos sobre fechaduras, carcaças, lâminas, transponders, comandos, máquinas de programação e preços, organizados para consultares no momento em que precisas.</p>
+        <!-- SUBSTITUIR #checkout pelo link de pagamento -->
+        <a class="btn left" href="#checkout">QUERO O MEU MANUAL AGORA</a>
+        <p class="micro">Acesso imediato · Garantia de 7 dias</p>
+      </div>
+      <div class="ph r11"><img src="img/mockup.png" alt="Mockup do manual Bancada Pronta" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>MOCKUP DO E-BOOK<br>img/mockup.png</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== LEAD ===== -->
+<section>
+  <div class="w two">
+    <div>
+      <h2>O carro do cliente está parado à tua frente.</h2>
+      <p>Ele quer a chave pronta hoje e tu não tens a certeza de que chip usar, que lâmina cortar ou quanto cobrar.</p>
+      <p style="margin-top:12px">Ou estás a começar e tens receio de gastar centenas de euros na máquina errada antes do primeiro cliente.</p>
+      <p style="margin-top:12px">Os dois casos têm a mesma causa: <span class="mark">falta de informação organizada</span>. A informação existe, mas está espalhada por grupos, vídeos e fornecedores que te querem vender alguma coisa.</p>
+      <p style="margin-top:12px"><b>Este manual junta tudo num só sítio, pela ordem em que vais precisar.</b></p>
+    </div>
+    <div class="ph r169" style="margin-top:20px"><img src="img/dor.jpg" alt="Serralheiro pensativo com chave de carro na mão" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>IMAGEM DA DOR<br>img/dor.jpg</span></div>
+  </div>
+</section>
+
+<!-- ===== PARA QUEM É ===== -->
+<section class="alt">
+  <div class="w">
+    <h2>Para quem é o Bancada Pronta</h2>
+    <ul class="list">
+      <li>Para quem quer entrar na profissão de serralheiro e não sabe por onde começar sem desperdiçar dinheiro</li>
+      <li>Para o serralheiro de fechaduras e cópias que quer começar a trabalhar com chaves de carro</li>
+      <li>Para quem já trabalha no automóvel e quer uma consulta rápida de chips, lâminas e procedimentos</li>
+      <li>Para quem já perdeu um serviço por não o saber resolver na hora</li>
+    </ul>
+    <p class="note"><b>Não é para</b> quem procura uma fórmula de dinheiro fácil. O conteúdo é profissional e qualquer serviço exige autorização do proprietário.</p>
+  </div>
+</section>
+
+<!-- ===== DORES ===== -->
+<section class="dark">
+  <div class="w">
+    <h2>Reconheces alguma destas situações?</h2>
+    <ul class="list x">
+      <li>Comprar ferramenta cara que fica esquecida na gaveta</li>
+      <li>Mandar o cliente para a concorrência porque o serviço era "codificado"</li>
+      <li>Perder o chip transponder ao trocar a carcaça</li>
+      <li>Cortar a lâmina errada para o canhão</li>
+      <li>Cobrar menos do que devias por não saberes calcular o custo</li>
+      <li>Ter stock de modelos que ninguém usa na tua zona</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== MÉTODO ===== -->
+<section class="dark" style="padding-top:0">
+  <div class="w">
+    <span class="tag">O método</span>
+    <h2>Método Bancada Pronta: <span class="hl">Consulta, Executa e Cobra</span></h2>
+    <div class="steps">
+      <div class="step"><div class="ph"><img src="img/icone-consultar.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-consultar.png</span></div><b>1. Consulta</b><p>Tabelas por marca, chip, lâmina e carcaça para encontrares a resposta em segundos.</p></div>
+      <div class="step"><div class="ph"><img src="img/icone-executar.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-executar.png</span></div><b>2. Executa</b><p>Passo a passo de campo, com os erros de principiante já identificados em cada capítulo.</p></div>
+      <div class="step"><div class="ph"><img src="img/icone-cobrar.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-cobrar.png</span></div><b>3. Cobra</b><p>Uma lógica de preços por serviço para não trabalhares com prejuízo.</p></div>
+    </div>
+    <p class="note" style="color:#222">Não é um curso de 40 horas. É um <b>manual de consulta</b>: cada capítulo traz o que é, como se faz, as ferramentas com intervalo de preço, o erro mais comum e uma dica de campo.</p>
+  </div>
+</section>
+
+<!-- ===== CONTEÚDO ===== -->
+<section class="alt">
+  <div class="w">
+    <span class="tag">O que vais encontrar</span>
+    <h2>15 capítulos, do residencial à codificação</h2>
+    <div class="ph r43" style="max-width:640px;margin:0 auto 28px"><img src="img/paginas.jpg" alt="Páginas interiores do manual" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>PÁGINAS POR DENTRO<br>img/paginas.jpg</span></div>
+    <div class="caps">
+      <div class="cap"><b>Começar com pouco investimento:</b> a ordem certa de compras para teres retorno logo no primeiro mês</div>
+      <div class="cap"><b>Bancada e lista de material:</b> tudo o que precisas para residencial, automóvel e electrónica</div>
+      <div class="cap"><b>Fornecedores:</b> onde comprar e como ter sempre duas opções em cada categoria</div>
+      <div class="cap"><b>Fechaduras e chaves residenciais:</b> tipos, instalação, substituição e a cópia certa à primeira</div>
+      <div class="cap"><b>Carcaças e chaves canivete:</b> as mais trocadas e como trocar sem perder o chip</div>
+      <div class="cap"><b>Lâminas e leitura de segredo:</b> tabela de perfis por marca</div>
+      <div class="cap"><b>Transponders:</b> tipos de chip e o processo de cópia e geração</div>
+      <div class="cap"><b>Programadores portáteis e comandos universais:</b> funções e quando usar cada um</div>
+      <div class="cap"><b>Comandos e alarmes:</b> programação, frequências e sincronização</div>
+      <div class="cap"><b>Máquinas de programação:</b> relação qualidade-preço e por qual começar</div>
+      <div class="cap"><b>Tabela de ficheiros</b> e guia por marca</div>
+      <div class="cap"><b>Ignição e portas:</b> peças mais comuns e kits de reparação</div>
+      <div class="cap"><b>Soldadura electrónica:</b> troca de microinterruptor, pilha e reparação de placa</div>
+      <div class="cap"><b>Atendimento autorizado e ética:</b> como verificar a propriedade e proteger-te</div>
+      <div class="cap"><b>Preços, clientes e actualização:</b> tabela de serviços, primeiros clientes e como manter tudo em dia</div>
+    </div>
+    <p style="margin-top:20px;text-align:center"><b>Formato:</b> e-book digital em PDF, [inserir n.º de páginas] páginas, para ler no telemóvel ou imprimir e deixar na bancada.</p>
+    <a class="btn" href="#checkout">SIM, QUERO O MANUAL COMPLETO</a>
+  </div>
+</section>
+
+<!-- ===== BÓNUS ===== -->
+<section class="dark">
+  <div class="w">
+    <span class="tag">Incluído sem custo extra</span>
+    <h2>5 bónus para a tua bancada</h2>
+    <!-- Só indicar valor de cada bónus se for real e justificável -->
+    <div class="bon">
+      <div class="card"><div class="ph r34"><img src="img/bonus-1.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-1.png</span></div><h3>Tabela de Preços de Serviços</h3><p>Folha de cálculo editável para ajustares à tua zona.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-2.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-2.png</span></div><h3>Checklist de Atendimento Autorizado</h3><p>Modelo de declaração e lista de documentos a confirmar.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-3.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-3.png</span></div><h3>Tabela de Bancada</h3><p>Lâminas, chips e carcaças por modelo numa só página, para imprimir.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-4.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-4.png</span></div><h3>O Meu Primeiro Mês</h3><p>Plano de 30 dias para quem está a começar.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-5.png" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-5.png</span></div><h3>Actualizações gratuitas</h3><p>Tabelas actualizadas durante [inserir prazo].</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROVA ===== -->
+<section class="alt">
+  <div class="w">
+    <h2>Quem já tem o manual na bancada</h2>
+    <!-- Usar apenas depoimentos reais, com nome e autorização -->
+    <div class="proof">
+      <div class="ph"><span>[inserir depoimento real com nome e autorização]</span></div>
+      <div class="ph"><span>[inserir print de conversa ou avaliação]</span></div>
+      <div class="ph"><span>[inserir foto de serviço real feito pelo autor]</span></div>
+    </div>
+    <p style="text-align:center;margin-top:16px">[inserir números reais e comprováveis, com um só período em toda a página]</p>
+  </div>
+</section>
+
+<!-- ===== AUTOR ===== -->
+<section>
+  <div class="w author">
+    <div>
+      <span class="tag">Quem escreveu</span>
+      <h2>[inserir nome]</h2>
+      <p>[inserir localidade], serralheiro há [inserir anos]. [inserir história curta: como começou, o primeiro erro caro e o que aprendeu].</p>
+      <p style="margin-top:10px">Instagram: [inserir @]</p>
+    </div>
+    <div class="ph r43"><img src="img/autor.jpg" alt="Autor na bancada" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>FOTO REAL DO AUTOR<br>img/autor.jpg</span></div>
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="dark" id="oferta">
+  <div class="w">
+    <h2 style="text-align:center">Tudo o que levas hoje</h2>
+    <div class="ph r11" style="max-width:420px;margin:0 auto 24px"><img src="img/pacote.png" alt="Pacote completo Bancada Pronta" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>PACOTE COMPLETO<br>img/pacote.png</span></div>
+    <div class="offer">
+      <h3>Bancada Pronta: o manual do serralheiro</h3>
+      <ul class="list">
+        <li>Manual com 15 capítulos</li>
+        <li>5 bónus para a bancada</li>
+        <li>Acesso imediato por e-mail</li>
+        <li>Garantia de 7 dias</li>
+      </ul>
+      <p style="font-size:.95rem">Um único serviço mal feito, uma lâmina perdida ou um chip queimado já custa mais do que este manual. Uma máquina comprada sem necessidade custa centenas de euros.</p>
+      <!-- [confirmar preço] Usar "de/por" apenas se o preço cheio tiver existido de facto -->
+      <p style="margin-top:16px">de <span class="old">39€</span> por apenas</p>
+      <div class="new">19€</div>
+      <p class="micro">Pagamento único · IVA incluído [confirmar]</p>
+      <a class="btn" href="#checkout" id="checkout-btn">QUERO O MEU MANUAL POR 19€</a>
+      <!-- [placeholder] Confirmar métodos disponíveis na plataforma de pagamento -->
+      <p class="pay">🔒 Pagamento seguro · MB WAY · Multibanco · Cartão</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section>
+  <div class="w guar">
+    <div class="ph"><img src="img/selo-garantia.png" alt="Selo de garantia de 7 dias" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>SELO<br>img/selo-garantia.png</span></div>
+    <div>
+      <h2>Garantia incondicional de 7 dias</h2>
+      <p>Lê, consulta e usa na bancada. Se achares que não vale a pena, pede o reembolso na própria plataforma dentro de 7 dias e devolvemos 100% do valor, sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="alt">
+  <div class="w" style="max-width:800px">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Serve para quem nunca trabalhou como serralheiro?</summary><p>Sim. O capítulo 1 mostra por onde começar a gastar pouco.</p></details>
+    <details><summary>Já sou serralheiro. Vou aprender algo novo?</summary><p>O manual funciona como consulta rápida de automóvel e codificação, com tabelas por marca.</p></details>
+    <details><summary>Preciso de ter máquina de programação?</summary><p>Não. O manual mostra o que se consegue fazer sem máquina e quando compensa comprar uma.</p></details>
+    <details><summary>É um curso em vídeo?</summary><p>Não. É um e-book em PDF para consulta. <!-- [ajustar se houver vídeos] --></p></details>
+    <details><summary>Como recebo o manual?</summary><p>O acesso chega por e-mail assim que o pagamento for confirmado. Podes descarregar e ler no telemóvel, tablet ou computador.</p></details>
+    <details><summary>Recebo factura?</summary><p>Sim. [confirmar com a plataforma de pagamento: emissão de factura com NIF]</p></details>
+    <details><summary>O manual garante que vou ganhar dinheiro?</summary><p>Não. Entrega conhecimento técnico; o resultado depende do teu trabalho e da tua zona.</p></details>
+    <details><summary>Os procedimentos servem para qualquer pessoa?</summary><p>Não. Todo o procedimento é para uso profissional, com autorização e confirmação da propriedade do cliente.</p></details>
+    <details><summary>Tem garantia?</summary><p>Sim, 7 dias, com reembolso total.</p></details>
+  </div>
+</section>
+
+<!-- ===== FECHO ===== -->
+<section class="dark">
+  <div class="w" style="text-align:center;max-width:780px">
+    <h2>Daqui a um mês, qual vai ser a tua resposta ao cliente?</h2>
+    <p>Podes continuar a dizer "esse não faço", ou podes ter o manual aberto na bancada e resolver o serviço. A informação que procuras nos grupos já está organizada aqui, por menos do que custa um serviço mal feito.</p>
+    <a class="btn" href="#checkout">QUERO O MEU MANUAL AGORA</a>
+    <p class="micro">Acesso imediato · Pagamento seguro · 7 dias de garantia</p>
+  </div>
+</section>
+
+<!-- ===== RODAPÉ ===== -->
+<footer>
+  <div class="w">
+    <p><a href="#termos">Termos e Condições</a>|<a href="#privacidade">Política de Privacidade</a>|<a href="#contacto">Contacto</a></p>
+    <!-- Livro de Reclamações Electrónico é obrigatório em Portugal: substituir pelo link oficial -->
+    <a class="lr" href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">📕 Livro de Reclamações</a>
+    <p style="margin-top:16px">[inserir nome da empresa] · NIF [inserir] · [inserir morada] · [inserir e-mail]</p>
+    <p style="margin-top:8px">Conteúdo educativo. Os resultados variam de pessoa para pessoa.</p>
+    <p style="margin-top:8px">© 2026 Bancada Pronta. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#checkout">QUERO O MEU MANUAL · 19€</a></div>
+<script>
+var s=document.getElementById('sticky');
+addEventListener('scroll',function(){s.classList.toggle('on',scrollY>500)},{passive:true});
+</script>
+</body>
+</html>
