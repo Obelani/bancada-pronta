@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bancada Pronta: o manual do serralheiro</title>
-<meta name="description" content="O manual de bancada do serralheiro, do residencial à codificação: 15 capítulos práticos para consultar na hora do serviço.">
+<title>Bancada Pronta: o manual do chaveiro</title>
+<meta name="description" content="O manual de bancada do chaveiro, do residencial à codificação: 15 capítulos práticos para consultar na hora do serviço.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -64,11 +64,16 @@ section{padding:60px 0}
 .proof .dep{margin:0}
 .proof .dep img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .author{display:grid;gap:24px;align-items:center}
-.offer{background:#fff;color:var(--t);border:4px solid var(--y);border-radius:16px;padding:28px 20px;max-width:560px;margin:0 auto;text-align:center}
+.offer{background:#fff;color:var(--t);border:4px solid var(--y);border-radius:16px;padding:28px 20px;max-width:560px;margin:0 auto;text-align:center;position:relative}
 .offer .old{text-decoration:line-through;color:#999;font-size:1.2rem}
 .offer .new{font-family:Montserrat;font-weight:900;font-size:3.6rem;color:var(--k);line-height:1}
 .offer ul{text-align:left;margin:18px 0}
 .pay{font-size:.85rem;color:#666;margin-top:8px}
+.offers{display:grid;gap:24px;max-width:780px;margin:0 auto}
+@media(min-width:700px){.offers{grid-template-columns:1fr 1fr}}
+.offer.basico .new{font-size:2.6rem}
+.offer.completo{border-color:var(--y)}
+.offer .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--y);color:var(--k);font-family:Montserrat;font-weight:900;font-size:.75rem;padding:4px 14px;border-radius:20px;white-space:nowrap}
 .guar{display:grid;gap:24px;align-items:center}
 .guar .ph{width:180px;height:180px;margin:0 auto;border-radius:50%}
 details{background:#fff;border-radius:10px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
@@ -79,7 +84,6 @@ details[open] summary:after{content:"–"}
 details p{padding:0 18px 18px}
 footer{background:#000;color:#999;font-size:.85rem;padding:36px 0 40px;text-align:center}
 footer a{color:#ccc;margin:0 8px}
-.lr{display:inline-block;margin-top:14px;border:1px solid #555;padding:8px 14px;border-radius:6px}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:99;background:rgba(13,13,13,.96);padding:10px 14px;box-shadow:0 -4px 14px rgba(0,0,0,.3);transform:translateY(110%);transition:transform .3s}
 .sticky.on{transform:none}
 .sticky a{margin:0 auto;padding:14px;font-size:1rem;box-shadow:none}
@@ -104,11 +108,11 @@ footer a{color:#ccc;margin:0 8px}
     <div class="brand">🔑 BANCADA PRONTA</div>
     <div class="hero-grid">
       <div>
-        <span class="tag">Manual do serralheiro · do residencial à codificação</span>
-        <h1>Encravou a meio do serviço? <span class="hl">Abre o manual, encontra a resposta</span> e entrega a chave ao cliente.</h1>
-        <p class="sub">O manual de bancada do serralheiro (ou chaveiro, como lhe quiseres chamar): 15 capítulos práticos sobre fechaduras, carcaças, lâminas, transponders, comandos, máquinas de programação e preços, organizados para consultares no momento em que precisas.</p>
-        <!-- SUBSTITUIR #checkout pelo link de pagamento -->
-        <a class="btn left" href="https://pay.hotmart.com/K108278998H?off=ucui7gqk&checkoutMode=10">QUERO O MEU MANUAL AGORA</a>
+        <span class="tag">Manual do chaveiro · do residencial à codificação</span>
+        <h1>Travou no meio do serviço? <span class="hl">Abre o manual, encontra a resposta</span> e entrega a chave pro cliente.</h1>
+        <p class="sub">O manual de bancada do chaveiro (ou serralheiro, como você quiser chamar): 15 capítulos práticos sobre fechaduras, carcaças, lâminas, transponders, controles, máquinas de programação e preços, organizados para você consultar no momento em que precisar.</p>
+        <!-- SUBSTITUIR #oferta pelo link de pagamento, se quiser ir direto ao checkout -->
+        <a class="btn left" href="#oferta">QUERO O MEU MANUAL AGORA</a>
         <p class="micro">Acesso imediato · Garantia de 7 dias</p>
       </div>
       <div class="ph r11"><img src="img/mockup.webp" alt="Mockup do manual Bancada Pronta" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>MOCKUP DO E-BOOK<br>img/mockup.webp</span></div>
@@ -120,13 +124,13 @@ footer a{color:#ccc;margin:0 8px}
 <section>
   <div class="w two">
     <div>
-      <h2>O carro do cliente está parado à tua frente.</h2>
-      <p>Ele quer a chave pronta hoje e tu não tens a certeza de que chip usar, que lâmina cortar ou quanto cobrar.</p>
-      <p style="margin-top:12px">Ou estás a começar e tens receio de gastar centenas de euros na máquina errada antes do primeiro cliente.</p>
-      <p style="margin-top:12px">Os dois casos têm a mesma causa: <span class="mark">falta de informação organizada</span>. A informação existe, mas está espalhada por grupos, vídeos e fornecedores que te querem vender alguma coisa.</p>
-      <p style="margin-top:12px"><b>Este manual junta tudo num só sítio, pela ordem em que vais precisar.</b></p>
+      <h2>O carro do cliente está parado na sua frente.</h2>
+      <p>Ele quer a chave pronta hoje e você não tem certeza de qual chip usar, qual lâmina cortar ou quanto cobrar.</p>
+      <p style="margin-top:12px">Ou você está começando e tem medo de gastar centenas de reais na máquina errada antes do primeiro cliente.</p>
+      <p style="margin-top:12px">Os dois casos têm a mesma causa: <span class="mark">falta de informação organizada</span>. A informação existe, mas está espalhada por grupos, vídeos e fornecedores que querem te vender alguma coisa.</p>
+      <p style="margin-top:12px"><b>Este manual junta tudo em um só lugar, na ordem em que você vai precisar.</b></p>
     </div>
-    <div class="ph r169" style="margin-top:20px"><img src="img/dor.webp" alt="Serralheiro pensativo com chave de carro na mão" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>IMAGEM DA DOR<br>img/dor.webp</span></div>
+    <div class="ph r169" style="margin-top:20px"><img src="img/dor.webp" alt="Chaveiro pensativo com chave de carro na mão" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>IMAGEM DA DOR<br>img/dor.webp</span></div>
   </div>
 </section>
 
@@ -135,10 +139,10 @@ footer a{color:#ccc;margin:0 8px}
   <div class="w">
     <h2>Para quem é o Bancada Pronta</h2>
     <ul class="list">
-      <li>Para quem quer entrar na profissão de serralheiro e não sabe por onde começar sem desperdiçar dinheiro</li>
-      <li>Para o serralheiro de fechaduras e cópias que quer começar a trabalhar com chaves de carro</li>
-      <li>Para quem já trabalha no automóvel e quer uma consulta rápida de chips, lâminas e procedimentos</li>
-      <li>Para quem já perdeu um serviço por não o saber resolver na hora</li>
+      <li>Para quem quer entrar na profissão de chaveiro e não sabe por onde começar sem desperdiçar dinheiro</li>
+      <li>Para o chaveiro de fechaduras e cópias que quer começar a trabalhar com chaves de carro</li>
+      <li>Para quem já trabalha com carros e quer uma consulta rápida de chips, lâminas e procedimentos</li>
+      <li>Para quem já perdeu um serviço por não saber resolver na hora</li>
     </ul>
     <p class="note"><b>Não é para</b> quem procura uma fórmula de dinheiro fácil. O conteúdo é profissional e qualquer serviço exige autorização do proprietário.</p>
   </div>
@@ -147,14 +151,14 @@ footer a{color:#ccc;margin:0 8px}
 <!-- ===== DORES ===== -->
 <section class="dark">
   <div class="w">
-    <h2>Reconheces alguma destas situações?</h2>
+    <h2>Reconhece alguma dessas situações?</h2>
     <ul class="list x">
       <li>Comprar ferramenta cara que fica esquecida na gaveta</li>
       <li>Mandar o cliente para a concorrência porque o serviço era "codificado"</li>
       <li>Perder o chip transponder ao trocar a carcaça</li>
       <li>Cortar a lâmina errada para o canhão</li>
-      <li>Cobrar menos do que devias por não saberes calcular o custo</li>
-      <li>Ter stock de modelos que ninguém usa na tua zona</li>
+      <li>Cobrar menos do que devia por não saber calcular o custo</li>
+      <li>Ter estoque de modelos que ninguém usa na sua região</li>
     </ul>
   </div>
 </section>
@@ -163,57 +167,57 @@ footer a{color:#ccc;margin:0 8px}
 <section class="dark" style="padding-top:0">
   <div class="w">
     <span class="tag">O método</span>
-    <h2>Método Bancada Pronta: <span class="hl">Consulta, Executa e Cobra</span></h2>
+    <h2>Método Bancada Pronta: <span class="hl">Consulte, Execute e Cobre</span></h2>
     <div class="steps">
-      <div class="step"><div class="ph"><img src="img/icone-consultar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-consultar.webp</span></div><b>1. Consulta</b><p>Tabelas por marca, chip, lâmina e carcaça para encontrares a resposta em segundos.</p></div>
-      <div class="step"><div class="ph"><img src="img/icone-executar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-executar.webp</span></div><b>2. Executa</b><p>Passo a passo de campo, com os erros de principiante já identificados em cada capítulo.</p></div>
-      <div class="step"><div class="ph"><img src="img/icone-cobrar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-cobrar.webp</span></div><b>3. Cobra</b><p>Uma lógica de preços por serviço para não trabalhares com prejuízo.</p></div>
+      <div class="step"><div class="ph"><img src="img/icone-consultar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-consultar.webp</span></div><b>1. Consulte</b><p>Tabelas por marca, chip, lâmina e carcaça para você encontrar a resposta em segundos.</p></div>
+      <div class="step"><div class="ph"><img src="img/icone-executar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-executar.webp</span></div><b>2. Execute</b><p>Passo a passo de campo, com os erros de principiante já identificados em cada capítulo.</p></div>
+      <div class="step"><div class="ph"><img src="img/icone-cobrar.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/icone-cobrar.webp</span></div><b>3. Cobre</b><p>Uma lógica de preços por serviço para você não trabalhar no prejuízo.</p></div>
     </div>
-    <p class="note" style="color:#222">Não é um curso de 40 horas. É um <b>manual de consulta</b>: cada capítulo traz o que é, como se faz, as ferramentas com intervalo de preço, o erro mais comum e uma dica de campo.</p>
+    <p class="note" style="color:#222">Não é um curso de 40 horas. É um <b>manual de consulta</b>: cada capítulo traz o que é, como se faz, as ferramentas com faixa de preço, o erro mais comum e uma dica de campo.</p>
   </div>
 </section>
 
 <!-- ===== CONTEÚDO ===== -->
 <section class="alt">
   <div class="w">
-    <span class="tag">O que vais encontrar</span>
+    <span class="tag">O que você vai encontrar</span>
     <h2>15 capítulos, do residencial à codificação</h2>
     <div class="pgcar" id="pgcar" aria-label="Páginas reais do manual"><div class="pgtrack" id="pgtrack"><div class="pg"><img src="img/paginas/01-p003.webp" alt="Página do manual: Como iniciar com pouco investimento" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/02-p005.webp" alt="Página do manual: Ferramentas manuais essenciais" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/03-p009.webp" alt="Página do manual: Como escolher fornecedores" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/04-areas.webp" alt="Página do manual: Áreas de atuação profissional" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/05-p025.webp" alt="Página do manual: Introdução aos serviços de chaves para automóveis" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/06-p027.webp" alt="Página do manual: Anatomia da chave de automóvel" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/07-p033.webp" alt="Página do manual: Sistemas de ignição do automóvel" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/08-p035.webp" alt="Página do manual: Fechaduras das portas do automóvel" loading="lazy" decoding="async"></div><div class="pg"><img src="img/paginas/09-p042.webp" alt="Página do manual: Cálculo do preço dos serviços automóveis" loading="lazy" decoding="async"></div></div></div>
-<p class="note" style="text-align:center;margin:-12px 0 28px">Páginas reais do manual. Passa o rato (ou toca) para parar.</p>
+<p class="note" style="text-align:center;margin:-12px 0 28px">Páginas reais do manual. Passe o mouse (ou toque na tela) para pausar.</p>
     <div class="caps">
-      <div class="cap"><b>Começar com pouco investimento:</b> a ordem certa de compras para teres retorno logo no primeiro mês</div>
-      <div class="cap"><b>Bancada e lista de material:</b> tudo o que precisas para residencial, automóvel e electrónica</div>
+      <div class="cap"><b>Começar com pouco investimento:</b> a ordem certa de compras para você ter retorno já no primeiro mês</div>
+      <div class="cap"><b>Bancada e lista de material:</b> tudo o que você precisa para residencial, automotivo e eletrônica</div>
       <div class="cap"><b>Fornecedores:</b> onde comprar e como ter sempre duas opções em cada categoria</div>
-      <div class="cap"><b>Fechaduras e chaves residenciais:</b> tipos, instalação, substituição e a cópia certa à primeira</div>
+      <div class="cap"><b>Fechaduras e chaves residenciais:</b> tipos, instalação, substituição e a cópia certa de primeira</div>
       <div class="cap"><b>Carcaças e chaves canivete:</b> as mais trocadas e como trocar sem perder o chip</div>
       <div class="cap"><b>Lâminas e leitura de segredo:</b> tabela de perfis por marca</div>
       <div class="cap"><b>Transponders:</b> tipos de chip e o processo de cópia e geração</div>
-      <div class="cap"><b>Programadores portáteis e comandos universais:</b> funções e quando usar cada um</div>
-      <div class="cap"><b>Comandos e alarmes:</b> programação, frequências e sincronização</div>
-      <div class="cap"><b>Máquinas de programação:</b> relação qualidade-preço e por qual começar</div>
-      <div class="cap"><b>Tabela de ficheiros</b> e guia por marca</div>
-      <div class="cap"><b>Ignição e portas:</b> peças mais comuns e kits de reparação</div>
-      <div class="cap"><b>Soldadura electrónica:</b> troca de microinterruptor, pilha e reparação de placa</div>
-      <div class="cap"><b>Atendimento autorizado e ética:</b> como verificar a propriedade e proteger-te</div>
-      <div class="cap"><b>Preços, clientes e actualização:</b> tabela de serviços, primeiros clientes e como manter tudo em dia</div>
+      <div class="cap"><b>Programadores portáteis e controles universais:</b> funções e quando usar cada um</div>
+      <div class="cap"><b>Controles e alarmes:</b> programação, frequências e sincronização</div>
+      <div class="cap"><b>Máquinas de programação:</b> relação custo-benefício e por qual começar</div>
+      <div class="cap"><b>Tabela de arquivos</b> e guia por marca</div>
+      <div class="cap"><b>Ignição e portas:</b> peças mais comuns e kits de reparo</div>
+      <div class="cap"><b>Solda eletrônica:</b> troca de microinterruptor, pilha e reparo de placa</div>
+      <div class="cap"><b>Atendimento autorizado e ética:</b> como verificar a propriedade e se proteger</div>
+      <div class="cap"><b>Preços, clientes e atualização:</b> tabela de serviços, primeiros clientes e como manter tudo em dia</div>
     </div>
-    <p style="margin-top:20px;text-align:center"><b>Formato:</b> e-book digital em PDF, [inserir n.º de páginas] páginas, para ler no telemóvel ou imprimir e deixar na bancada.</p>
-    <a class="btn" href="https://pay.hotmart.com/K108278998H?off=ucui7gqk&checkoutMode=10">SIM, QUERO O MANUAL COMPLETO</a>
+    <p style="margin-top:20px;text-align:center"><b>Formato:</b> e-book digital em PDF, [inserir número de páginas] páginas, para ler no celular ou imprimir e deixar na bancada.</p>
+    <a class="btn" href="#oferta">SIM, QUERO O MANUAL COMPLETO</a>
   </div>
 </section>
 
-<!-- ===== BÓNUS ===== -->
+<!-- ===== BÔNUS ===== -->
 <section class="dark">
   <div class="w">
     <span class="tag">Incluído sem custo extra</span>
-    <h2>5 bónus para a tua bancada</h2>
-    <!-- Só indicar valor de cada bónus se for real e justificável -->
+    <h2>5 bônus para a sua bancada</h2>
+    <!-- Só indicar valor de cada bônus se for real e justificável -->
     <div class="bon">
-      <div class="card"><div class="ph r34"><img src="img/bonus-1.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-1.webp</span></div><h3>Tabela de Preços de Serviços</h3><p>Folha de cálculo editável para ajustares à tua zona.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-1.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-1.webp</span></div><h3>Tabela de Preços de Serviços</h3><p>Planilha editável para você ajustar à sua região.</p></div>
       <div class="card"><div class="ph r34"><img src="img/bonus-2.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-2.webp</span></div><h3>Checklist de Atendimento Autorizado</h3><p>Modelo de declaração e lista de documentos a confirmar.</p></div>
-      <div class="card"><div class="ph r34"><img src="img/bonus-3.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-3.webp</span></div><h3>Tabela de Bancada</h3><p>Lâminas, chips e carcaças por modelo numa só página, para imprimir.</p></div>
-      <div class="card"><div class="ph r34"><img src="img/bonus-4.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-4.webp</span></div><h3>O Meu Primeiro Mês</h3><p>Plano de 30 dias para quem está a começar.</p></div>
-      <div class="card"><div class="ph r34"><img src="img/bonus-5.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-5.webp</span></div><h3>Actualizações gratuitas</h3><p>Tabelas actualizadas durante [inserir prazo].</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-3.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-3.webp</span></div><h3>Tabela de Bancada</h3><p>Lâminas, chips e carcaças por modelo em uma só página, para imprimir.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-4.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-4.webp</span></div><h3>O Meu Primeiro Mês</h3><p>Plano de 30 dias para quem está começando.</p></div>
+      <div class="card"><div class="ph r34"><img src="img/bonus-5.webp" alt="" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>img/bonus-5.webp</span></div><h3>Atualizações gratuitas</h3><p>Tabelas atualizadas durante [inserir prazo].</p></div>
     </div>
   </div>
 </section>
@@ -224,10 +228,10 @@ footer a{color:#ccc;margin:0 8px}
     <h2>Quem já tem o manual na bancada</h2>
     <!-- Depoimentos fornecidos pelo vendedor (confirmados como reais e autorizados) -->
     <div class="proof">
-      <figure class="dep"><img src="img/depoimento-1.webp" alt="Conversa de WhatsApp com Rui Carvalho: começou há poucos meses, andava perdido com o material e diz que o capítulo de começar com pouco investimento lhe poupou dinheiro logo na primeira compra." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-1.webp" alt="Conversa de WhatsApp com Rui Carvalho: começou há poucos meses, estava perdido com o material e diz que o capítulo de começar com pouco investimento fez ele economizar dinheiro já na primeira compra." loading="lazy"></figure>
       <figure class="dep"><img src="img/depoimento-2.webp" alt="Conversa de WhatsApp com Nuno Ferreira: fazia só fechaduras e cópias simples e, com as tabelas de chips e lâminas, já consegue atender chaves de carro sem mandar o cliente embora." loading="lazy"></figure>
-      <figure class="dep"><img src="img/depoimento-3.webp" alt="Conversa de WhatsApp com João Pereira: trabalha nisto há anos e usa a Tabela de Bancada todos os dias, colada ao pé da máquina, e diz que lhe poupa tempo." loading="lazy"></figure>
-      <figure class="dep"><img src="img/depoimento-4.webp" alt="Conversa de WhatsApp com Tiago Marques: a Tabela de Preços foi o que mais o ajudou, percebeu que estava a cobrar abaixo do que devia em vários serviços." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-3.webp" alt="Conversa de WhatsApp com João Pereira: trabalha nisso há anos e usa a Tabela de Bancada todos os dias, colada ao lado da máquina, e diz que isso economiza tempo." loading="lazy"></figure>
+      <figure class="dep"><img src="img/depoimento-4.webp" alt="Conversa de WhatsApp com Tiago Marques: a Tabela de Preços foi o que mais ajudou ele, percebeu que estava cobrando abaixo do que devia em vários serviços." loading="lazy"></figure>
 </div>
     <p style="text-align:center;margin-top:16px">[inserir números reais e comprováveis, com um só período em toda a página]</p>
   </div>
@@ -240,9 +244,9 @@ footer a{color:#ccc;margin:0 8px}
       <span class="tag">Quem escreveu</span>
       <h2>Ricardo Martins</h2>
       <p><strong>Braga, Portugal. 18 anos na área de chaves e fechaduras.</strong></p>
-      <p style="margin-top:10px">Comecei como ajudante numa pequena casa de chaves em Braga. Fazia cópias, organizava a bancada e acompanhava os serviços dos colegas mais experientes.</p>
-      <p style="margin-top:10px">O primeiro erro que me saiu caro foi encomendar uma chave de automóvel apenas pela marca e pelo aspeto da carcaça. Não confirmei a referência nem a compatibilidade com o modelo. Paguei a peça, perdi horas e tive de assumir o prejuízo.</p>
-      <p style="margin-top:10px">Desde então, sigo uma regra: <strong>confirmar primeiro, orçamentar depois e só avançar com autorização.</strong> Foi essa disciplina que me ajudou a trabalhar com mais segurança e a evitar retrabalho.</p>
+      <p style="margin-top:10px">Comecei como ajudante em uma pequena casa de chaves em Braga. Fazia cópias, organizava a bancada e acompanhava os serviços dos colegas mais experientes.</p>
+      <p style="margin-top:10px">O primeiro erro que me saiu caro foi encomendar uma chave de automóvel apenas pela marca e pelo aspecto da carcaça. Não confirmei a referência nem a compatibilidade com o modelo. Paguei a peça, perdi horas e tive que assumir o prejuízo.</p>
+      <p style="margin-top:10px">Desde então, sigo uma regra: <strong>confirmar primeiro, orçar depois e só avançar com autorização.</strong> Foi essa disciplina que me ajudou a trabalhar com mais segurança e a evitar retrabalho.</p>
       <!-- Instagram: a adicionar -->
     </div>
     <div class="ph r43"><img src="img/autor.webp" alt="Ricardo Martins na bancada" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>FOTO REAL DO AUTOR<br>img/autor.webp</span></div>
@@ -252,23 +256,35 @@ footer a{color:#ccc;margin:0 8px}
 <!-- ===== OFERTA ===== -->
 <section class="dark" id="oferta">
   <div class="w">
-    <h2 style="text-align:center">Tudo o que levas hoje</h2>
+    <h2 style="text-align:center">Escolha o seu plano</h2>
     <div class="ph r11" style="max-width:420px;margin:0 auto 24px"><img src="img/pacote.webp" alt="Pacote completo Bancada Pronta" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>PACOTE COMPLETO<br>img/pacote.webp</span></div>
-    <div class="offer">
-      <h3>Bancada Pronta: o manual do serralheiro</h3>
-      <ul class="list">
-        <li>Manual com 15 capítulos</li>
-        <li>5 bónus para a bancada</li>
-        <li>Acesso imediato por e-mail</li>
-        <li>Garantia de 7 dias</li>
-      </ul>
-      <p style="font-size:.95rem">Um único serviço mal feito, uma lâmina perdida ou um chip queimado já custa mais do que este manual. Uma máquina comprada sem necessidade custa centenas de euros.</p>
-      <p style="margin-top:16px">por apenas</p>
-      <div class="new">9,90€</div>
-      <p class="micro">Pagamento único · IVA incluído [confirmar]</p>
-      <a class="btn" href="https://pay.hotmart.com/K108278998H?off=ucui7gqk&checkoutMode=10" id="checkout-btn">QUERO O MEU MANUAL POR 9,90€</a>
-      <!-- [placeholder] Confirmar métodos disponíveis na plataforma de pagamento -->
-      <p class="pay">🔒 Pagamento seguro · MB WAY · Multibanco · Cartão</p>
+    <div class="offers">
+      <div class="offer basico">
+        <h3>Plano Básico</h3>
+        <div class="new">R$10</div>
+        <ul class="list">
+          <li>Manual com 15 capítulos</li>
+          <li>Acesso imediato por e-mail</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <p class="micro">Pagamento único</p>
+        <a class="btn" href="#" id="checkout-btn-basico">QUERO O MANUAL POR R$10</a>
+      </div>
+      <div class="offer completo">
+        <span class="badge">⭐ MAIS ESCOLHIDO</span>
+        <h3>Pacote Completo</h3>
+        <div class="new">R$27,90</div>
+        <ul class="list">
+          <li>Manual com 15 capítulos</li>
+          <li>5 bônus para a bancada</li>
+          <li>Acesso imediato por e-mail</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <p style="font-size:.95rem">Um único serviço mal feito, uma lâmina perdida ou um chip queimado já custa mais do que este manual. Uma máquina comprada sem necessidade custa centenas de reais.</p>
+        <p class="micro">Pagamento único</p>
+        <a class="btn" href="#" id="checkout-btn-completo">QUERO O PACOTE COMPLETO POR R$27,90</a>
+        <p class="pay">🔒 Pagamento seguro · Pix · Cartão de Crédito</p>
+      </div>
     </div>
   </div>
 </section>
@@ -279,7 +295,7 @@ footer a{color:#ccc;margin:0 8px}
     <div class="ph"><img src="img/selo-garantia.webp" alt="Selo de garantia de 7 dias" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"><span>SELO<br>img/selo-garantia.webp</span></div>
     <div>
       <h2>Garantia incondicional de 7 dias</h2>
-      <p>Lê, consulta e usa na bancada. Se achares que não vale a pena, pede o reembolso na própria plataforma dentro de 7 dias e devolvemos 100% do valor, sem perguntas.</p>
+      <p>Leia, consulte e use na bancada. Se você achar que não vale a pena, peça o reembolso na própria plataforma dentro de 7 dias e devolvemos 100% do valor, sem perguntas.</p>
     </div>
   </div>
 </section>
@@ -288,13 +304,13 @@ footer a{color:#ccc;margin:0 8px}
 <section class="alt">
   <div class="w" style="max-width:800px">
     <h2>Perguntas frequentes</h2>
-    <details><summary>Serve para quem nunca trabalhou como serralheiro?</summary><p>Sim. O capítulo 1 mostra por onde começar a gastar pouco.</p></details>
-    <details><summary>Já sou serralheiro. Vou aprender algo novo?</summary><p>O manual funciona como consulta rápida de automóvel e codificação, com tabelas por marca.</p></details>
-    <details><summary>Preciso de ter máquina de programação?</summary><p>Não. O manual mostra o que se consegue fazer sem máquina e quando compensa comprar uma.</p></details>
-    <details><summary>É um curso em vídeo?</summary><p>Não. É um e-book em PDF para consulta. <!-- [ajustar se houver vídeos] --></p></details>
-    <details><summary>Como recebo o manual?</summary><p>O acesso chega por e-mail assim que o pagamento for confirmado. Podes descarregar e ler no telemóvel, tablet ou computador.</p></details>
-    <details><summary>Recebo factura?</summary><p>Sim. [confirmar com a plataforma de pagamento: emissão de factura com NIF]</p></details>
-    <details><summary>O manual garante que vou ganhar dinheiro?</summary><p>Não. Entrega conhecimento técnico; o resultado depende do teu trabalho e da tua zona.</p></details>
+    <details><summary>Serve para quem nunca trabalhou como chaveiro?</summary><p>Sim. O capítulo 1 mostra por onde começar gastando pouco.</p></details>
+    <details><summary>Já sou chaveiro. Vou aprender algo novo?</summary><p>O manual funciona como consulta rápida para serviços em carros e codificação, com tabelas por marca.</p></details>
+    <details><summary>Preciso ter uma máquina de programação?</summary><p>Não. O manual mostra o que se consegue fazer sem máquina e quando compensa comprar uma.</p></details>
+    <details><summary>É um curso em vídeo?</summary><p>Não. É um e-book em PDF para consulta. <!-- ajustar se houver vídeos --></p></details>
+    <details><summary>Como recebo o manual?</summary><p>O acesso chega por e-mail assim que o pagamento for confirmado. Você pode baixar e ler no celular, tablet ou computador.</p></details>
+    <details><summary>Recebo nota fiscal?</summary><p>Sim. [confirmar com a plataforma de pagamento: emissão de nota fiscal com CPF/CNPJ]</p></details>
+    <details><summary>O manual garante que vou ganhar dinheiro?</summary><p>Não. Entrega conhecimento técnico; o resultado depende do seu trabalho e da sua região.</p></details>
     <details><summary>Os procedimentos servem para qualquer pessoa?</summary><p>Não. Todo o procedimento é para uso profissional, com autorização e confirmação da propriedade do cliente.</p></details>
     <details><summary>Tem garantia?</summary><p>Sim, 7 dias, com reembolso total.</p></details>
   </div>
@@ -303,9 +319,9 @@ footer a{color:#ccc;margin:0 8px}
 <!-- ===== FECHO ===== -->
 <section class="dark">
   <div class="w" style="text-align:center;max-width:780px">
-    <h2>Daqui a um mês, qual vai ser a tua resposta ao cliente?</h2>
-    <p>Podes continuar a dizer "esse não faço", ou podes ter o manual aberto na bancada e resolver o serviço. A informação que procuras nos grupos já está organizada aqui, por menos do que custa um serviço mal feito.</p>
-    <a class="btn" href="https://pay.hotmart.com/K108278998H?off=ucui7gqk&checkoutMode=10">QUERO O MEU MANUAL AGORA</a>
+    <h2>Daqui a um mês, qual vai ser a sua resposta pro cliente?</h2>
+    <p>Você pode continuar dizendo "esse eu não faço", ou pode ter o manual aberto na bancada e resolver o serviço. A informação que você procura nos grupos já está organizada aqui, por menos do que custa um serviço mal feito.</p>
+    <a class="btn" href="#oferta">QUERO O MEU MANUAL AGORA</a>
     <p class="micro">Acesso imediato · Pagamento seguro · 7 dias de garantia</p>
   </div>
 </section>
@@ -313,15 +329,13 @@ footer a{color:#ccc;margin:0 8px}
 <!-- ===== RODAPÉ ===== -->
 <footer>
   <div class="w">
-    <p><a href="#termos">Termos e Condições</a>|<a href="#privacidade">Política de Privacidade</a>|<a href="#contacto">Contacto</a></p>
-    <!-- Livro de Reclamações Electrónico é obrigatório em Portugal: substituir pelo link oficial -->
-    <a class="lr" href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">📕 Livro de Reclamações</a>
+    <p><a href="#">Termos de Uso</a>|<a href="#">Política de Privacidade</a>|<a href="#">Contato</a></p>
     <p style="margin-top:8px">Conteúdo educativo. Os resultados variam de pessoa para pessoa.</p>
     <p style="margin-top:8px">© 2026 Bancada Pronta. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="https://pay.hotmart.com/K108278998H?off=ucui7gqk&checkoutMode=10">QUERO O MEU MANUAL · 9,90€</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#oferta">QUERO O MEU MANUAL</a></div>
 <script>
 var s=document.getElementById('sticky');
 addEventListener('scroll',function(){s.classList.toggle('on',scrollY>500)},{passive:true});
